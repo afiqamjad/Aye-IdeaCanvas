@@ -1,12 +1,13 @@
 package com.bignerdranch.android.aye_ideacanvas
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
 import com.bignerdranch.android.aye_ideacanvas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding?.root)
+
         val navHomeFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
         navController = navHomeFragment.navController
 

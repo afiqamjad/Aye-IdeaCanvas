@@ -9,4 +9,5 @@
     <string name="close">Close</string>
     <string name="storyboard_title">StoryBoard Title</string>
     <string name="body_text_optional">body text (optional)</string>
+    <string name="storyboard_image">Storyboard Image</string>
 </resources>
