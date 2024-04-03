@@ -10,22 +10,26 @@ import com.bignerdranch.android.aye_ideacanvas.databinding.FragmentCreateBinding
 
 class CreateFragment : Fragment() {
 
-    private var binding: FragmentCreateBinding? = null
+    private var _binding: FragmentCreateBinding? = null
+    private val binding
+        get() = checkNotNull(_binding) {
+            "Cannot access binding because it is null. Is the view visible?"
+        }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentCreateBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentCreateBinding.inflate(inflater, container, false)
 
-        binding?.close?.setOnClickListener {
+        binding.close.setOnClickListener {
             findNavController().popBackStack()
         }
 
-        return binding?.root
+        return binding.root
 
     }
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
+        _binding = null
     }
 }

@@ -12,27 +12,31 @@ import com.bignerdranch.android.aye_ideacanvas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private var binding: ActivityMainBinding? = null
+    private var _binding: ActivityMainBinding? = null
+    private val binding
+        get() = checkNotNull(_binding) {
+            "Cannot access binding because it is null. Is the view visible?"
+        }
     private lateinit var navController : NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         splashScreen()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
 
-        setContentView(binding?.root)
+        setContentView(binding.root)
 
         val navHomeFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
         navController = navHomeFragment.navController
 
-        binding?.bottomNavigationView?.let { setupWithNavController(it, navController) }
+        binding.bottomNavigationView.let { setupWithNavController(it, navController) }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.create) {
-                binding?.bottomNavigationView?.visibility = View.GONE
+                binding.bottomNavigationView.visibility = View.GONE
             } else {
-                binding?.bottomNavigationView?.visibility = View.VISIBLE
+                binding.bottomNavigationView.visibility = View.VISIBLE
             }
         }
     }
@@ -44,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        binding = null
+        _binding = null
     }
 
 }
