@@ -5,13 +5,16 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class HomeAdapter(
+class PageAdapter(
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle,
-    private val fragments: List<Fragment>
+    private val pages: List<Page>
 ) : FragmentStateAdapter(fragmentManager, lifecycle) {
 
-    override fun getItemCount(): Int = fragments.size
+    override fun getItemCount(): Int = pages.size
 
-    override fun createFragment(position: Int): Fragment = fragments[position]
+    override fun createFragment(position: Int): Fragment {
+        // Create a new instance of the fragment and pass the data
+        return PageFragment.newInstance(pages[position])
+    }
 }
