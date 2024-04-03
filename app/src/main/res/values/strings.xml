@@ -5,4 +5,8 @@
     <string name="create">Create</string>
     <string name="notifications">Notifications</string>
     <string name="profile">Profile</string>
+    <string name="next">Next</string>
+    <string name="close">Close</string>
+    <string name="storyboard_title">StoryBoard Title</string>
+    <string name="body_text_optional">body text (optional)</string>
 </resources>

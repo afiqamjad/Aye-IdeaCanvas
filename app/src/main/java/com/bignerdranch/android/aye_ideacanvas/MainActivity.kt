@@ -2,51 +2,47 @@ package com.bignerdranch.android.aye_ideacanvas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.bignerdranch.android.aye_ideacanvas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private var binding: ActivityMainBinding? = null
+    private lateinit var navController : NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         splashScreen()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        replaceFragment(HomeFragment())
 
-        binding.bottomNavigationView.setOnItemSelectedListener {
+        setContentView(binding?.root)
+        val navHomeFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
+        navController = navHomeFragment.navController
 
-            when(it.itemId){
+        binding?.bottomNavigationView?.let { setupWithNavController(it, navController) }
 
-                R.id.home -> replaceFragment(HomeFragment())
-                R.id.search -> replaceFragment(SearchFragment())
-                R.id.create -> replaceFragment(CreateFragment())
-                R.id.notifications -> replaceFragment(NotificationsFragment())
-                R.id.profile -> replaceFragment(ProfileFragment())
-
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.create) {
+                binding?.bottomNavigationView?.visibility = View.GONE
+            } else {
+                binding?.bottomNavigationView?.visibility = View.VISIBLE
             }
-
-            true
-
         }
-
     }
 
     private fun splashScreen(){
         Thread.sleep(1500)
         installSplashScreen()
     }
-    private fun replaceFragment(fragment : Fragment){
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,fragment)
-        fragmentTransaction.commit()
-
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 
 }
