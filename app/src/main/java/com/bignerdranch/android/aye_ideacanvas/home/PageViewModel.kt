@@ -1,8 +1,9 @@
-package com.bignerdranch.android.aye_ideacanvas
+package com.bignerdranch.android.aye_ideacanvas.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bignerdranch.android.aye_ideacanvas.home.Page
 
 class PageViewModel : ViewModel() {
     // LiveData allows your Activity or Fragment to observe changes to the data

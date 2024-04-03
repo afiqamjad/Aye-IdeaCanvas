@@ -1,10 +1,11 @@
-package com.bignerdranch.android.aye_ideacanvas
+package com.bignerdranch.android.aye_ideacanvas.notifications
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bignerdranch.android.aye_ideacanvas.R
 
 class NotificationsFragment : Fragment() {
     override fun onCreateView(

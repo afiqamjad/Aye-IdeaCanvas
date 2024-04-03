@@ -1,4 +1,4 @@
-package com.bignerdranch.android.aye_ideacanvas
+package com.bignerdranch.android.aye_ideacanvas.home
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

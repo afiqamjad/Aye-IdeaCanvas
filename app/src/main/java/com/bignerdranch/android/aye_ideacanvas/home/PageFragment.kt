@@ -1,13 +1,13 @@
-package com.bignerdranch.android.aye_ideacanvas
+package com.bignerdranch.android.aye_ideacanvas.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.bignerdranch.android.aye_ideacanvas.R
 import com.bumptech.glide.Glide
 
 class

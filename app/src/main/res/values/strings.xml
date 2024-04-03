@@ -10,4 +10,6 @@
     <string name="storyboard_title">StoryBoard Title</string>
     <string name="body_text_optional">body text (optional)</string>
     <string name="storyboard_image">Storyboard Image</string>
+    <string name="add_music">Add music</string>
+    <string name="frame">Frame</string>
 </resources>
