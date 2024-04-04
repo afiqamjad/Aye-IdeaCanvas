@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
         val navHomeFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
         navController = navHomeFragment.navController
 
-        binding.bottomNavigationView.let { setupWithNavController(it, navController) }
+        setupWithNavController(binding.bottomNavigationView, navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.create) {
+            if (destination.id == R.id.create || destination.id == R.id.createDetails) {
                 binding.bottomNavigationView.visibility = View.GONE
             } else {
                 binding.bottomNavigationView.visibility = View.VISIBLE

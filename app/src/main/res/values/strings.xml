@@ -12,4 +12,19 @@
     <string name="storyboard_image">Storyboard Image</string>
     <string name="add_music">Add music</string>
     <string name="frame">Frame</string>
+    <string name="visibility">Visibility</string>
+    <string name="private_button">Private</string>
+    <string name="unlisted_button">Unlisted</string>
+    <string name="everyone_button">Everyone</string>
+    <string name="genre_one">Genre 1</string>
+    <string name="genre_two">Genre 2 (optional)</string>
+    <string name="series_title">Series Title</string>
+    <string name="tags">Tags</string>
+    <string name="mature_rated">Mature-Rated?</string>
+    <string name="character_limit_50">Less than 50 characters</string>
+    <string name="link">Link</string>
+    <string name="create_storyboard">Create StoryBoard</string>
+    <string name="link_to_work">Link to work</string>
+    <string name="enter_link">Enter a link to your work</string>
+    <string name="enter_tags">Enter tags</string>
 </resources>

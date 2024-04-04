@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bignerdranch.android.aye_ideacanvas.R
 import com.bignerdranch.android.aye_ideacanvas.databinding.FragmentCreateBinding
 
 class CreateFragment : Fragment(), CreateFramesRecyclerViewAdapter.ItemClickListener {
@@ -31,13 +32,22 @@ class CreateFragment : Fragment(), CreateFramesRecyclerViewAdapter.ItemClickList
         adapter.setClickListener(this)
         recyclerView.adapter = adapter
 
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         binding.close.setOnClickListener {
             findNavController().popBackStack()
         }
 
-        return binding.root
-
+        binding.next.setOnClickListener {
+            findNavController().navigate(R.id.action_create_to_createDetails)
+        }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
