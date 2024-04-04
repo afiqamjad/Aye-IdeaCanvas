@@ -11,12 +11,12 @@ import com.bignerdranch.android.aye_ideacanvas.R
 import com.bumptech.glide.Glide
 
 class
-PageFragment : Fragment() {
+HomepageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_page, container, false)
+        return inflater.inflate(R.layout.fragment_homepage, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,7 +25,7 @@ PageFragment : Fragment() {
         val username = view.findViewById<TextView>(R.id.username)
         val storyboard = view.findViewById<ImageView>(R.id.storyboard)
 
-        val data = arguments?.getSerializable("my_data") as? Page
+        val data = arguments?.getSerializable("my_data") as? Homepage
 
         // Load the images with Glide or Picasso
         data?.let {
@@ -42,8 +42,8 @@ PageFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(data: Page): PageFragment {
-            val fragment = PageFragment()
+        fun newInstance(data: Homepage): HomepageFragment {
+            val fragment = HomepageFragment()
 
             val args = Bundle()
             args.putSerializable("my_data", data)

@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bignerdranch.android.aye_ideacanvas.R
 
 class HomeFragment : Fragment() {
-    private lateinit var viewModel: PageViewModel
+    private lateinit var viewModel: HomepageViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -21,10 +21,10 @@ class HomeFragment : Fragment() {
         val viewPager = view.findViewById<ViewPager2>(R.id.viewPager)
         viewPager.orientation = ViewPager2.ORIENTATION_VERTICAL
 
-        viewModel = ViewModelProvider(this)[PageViewModel::class.java]
+        viewModel = ViewModelProvider(this)[HomepageViewModel::class.java]
 
-        viewModel.pageData.observe(viewLifecycleOwner) { data ->
-            viewPager.adapter = PageAdapter(childFragmentManager, lifecycle, data)
+        viewModel.homepageData.observe(viewLifecycleOwner) { data ->
+            viewPager.adapter = HomepageAdapter(childFragmentManager, lifecycle, data)
         }
         return view
     }
