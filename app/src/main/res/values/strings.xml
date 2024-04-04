@@ -31,4 +31,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="posts">Posts</string>
     <string name="qualifications">Qualifications</string>
+    <string name="profile_picture">Profile Picture</string>
 </resources>

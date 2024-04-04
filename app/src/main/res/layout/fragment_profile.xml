@@ -30,7 +30,8 @@
             android:id="@+id/profilePfp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars"
+            android:contentDescription="@string/profile_picture" />
     </androidx.cardview.widget.CardView>
 
     <TextView
