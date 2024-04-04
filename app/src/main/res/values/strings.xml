@@ -32,4 +32,6 @@
     <string name="posts">Posts</string>
     <string name="qualifications">Qualifications</string>
     <string name="profile_picture">Profile Picture</string>
+    <string name="activity">Activity</string>
+    <string name="messages">Messages</string>
 </resources>

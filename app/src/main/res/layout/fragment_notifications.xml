@@ -7,14 +7,61 @@
     tools:context=".notifications.NotificationsFragment">
 
     <TextView
+        android:id="@+id/notificationsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Notifications Fragment"
+        android:text="@string/notifications"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/notificationsToggleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:background="@color/white"
+        app:singleSelection="true"
+        app:checkedButton="@id/activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificationsTitle"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activity"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity"
+            android:textSize="16sp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/messages"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/messages"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/notificationsNavContainer"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificationsToggleGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:navGraph="@navigation/notifications_nav_graph"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

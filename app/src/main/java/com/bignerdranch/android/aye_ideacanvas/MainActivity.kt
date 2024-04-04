@@ -1,7 +1,6 @@
 package com.bignerdranch.android.aye_ideacanvas
 
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -10,7 +9,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.viewpager2.widget.ViewPager2
 import com.bignerdranch.android.aye_ideacanvas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -41,10 +39,9 @@ class MainActivity : AppCompatActivity() {
 
         val navHomeFragment = supportFragmentManager.findFragmentById(R.id.mainContainer) as NavHostFragment
         navController = navHomeFragment.navController
+        setupWithNavController(binding.bottomNavigationView, navController)
 
         var itemTextColorStateList : ColorStateList
-
-        setupWithNavController(binding.bottomNavigationView, navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.create || destination.id == R.id.createDetails) {
