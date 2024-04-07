@@ -5,55 +5,56 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import com.bignerdranch.android.aye_ideacanvas.R
 import com.bignerdranch.android.aye_ideacanvas.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
-
-    private lateinit var binding: FragmentNotificationsBinding
-    private lateinit var navController: NavController
+    private var _binding: FragmentNotificationsBinding? = null
+    private val binding
+        get() = checkNotNull(_binding) {
+            "Cannot access binding because it is null. Is the view visible?"
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(requireActivity(), R.id.notificationsNavContainer)
+        val nestedFragmentManager = childFragmentManager
 
-        showActivityFragment()
+        binding.notificationsToggleGroup.check(R.id.activity)
+        nestedFragmentManager.beginTransaction().apply {
+            replace(R.id.notificationsNavContainer, NotificationsActivityFragment())
+            commit()
+        }
 
-        binding.notificationsToggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
+        binding.notificationsToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) {
                 when (checkedId) {
-                    R.id.activity -> showActivityFragment()
-                    R.id.messages -> showMessagesFragment()
+                    R.id.messages -> {
+                        nestedFragmentManager.beginTransaction().apply {
+                            replace(R.id.notificationsNavContainer, NotificationsMessagesFragment())
+                            commit()
+                        }
+                    }
+                    R.id.activity -> {
+                        nestedFragmentManager.beginTransaction().apply {
+                            replace(R.id.notificationsNavContainer, NotificationsActivityFragment())
+                            commit()
+                        }
+                    }
                 }
             }
         }
     }
 
-    private fun showActivityFragment() {
-        val fragment = NotificationsActivityFragment()
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.notificationsNavContainer, fragment)
-            .commit()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
-    private fun showMessagesFragment() {
-        val fragment = NotificationsMessagesFragment()
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.notificationsNavContainer, fragment)
-            .commit()
-    }
-
 }

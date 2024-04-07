@@ -20,38 +20,18 @@
     </fragment>
 
     <fragment
-        android:id="@+id/create"
-        android:name="com.bignerdranch.android.aye_ideacanvas.create.CreateFragment"
-        android:label="fragment_create"
-        tools:layout="@layout/fragment_create">
-
-    <action
-        android:id="@+id/action_create_to_createDetails"
-        app:destination="@id/createDetails" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/createDetails"
-        android:name="com.bignerdranch.android.aye_ideacanvas.create.CreateDetailsFragment"
-        android:label="fragment_create_details"
-        tools:layout="@layout/fragment_create_details" >
-
-    <action
-        android:id="@+id/action_createDetails_to_home"
-        app:destination="@id/home" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/notifications"
-        android:name="com.bignerdranch.android.aye_ideacanvas.notifications.NotificationsFragment"
-        android:label="fragment_notifications"
-        tools:layout="@layout/fragment_notifications" />
-
-    <fragment
         android:id="@+id/profile"
         android:name="com.bignerdranch.android.aye_ideacanvas.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 
+    <fragment
+        android:id="@+id/notifications"
+        android:name="com.bignerdranch.android.aye_ideacanvas.notifications.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" >
+    </fragment>
+
+    <include app:graph="@navigation/create_nav_graph" />
 
 </navigation>

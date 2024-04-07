@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.aye_ideacanvas.R
-import com.bumptech.glide.Glide
 
 class CreateFramesRecyclerViewAdapter(
     context: Context,

@@ -37,7 +37,8 @@ class CreateDetailsFragment : Fragment() {
         }
 
         binding.create.setOnClickListener {
-            findNavController().navigate(R.id.action_createDetails_to_home)
+            findNavController().popBackStack(R.id.home, false)
+            findNavController().navigate(R.id.profile)
         }
     }
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@+id/create_nav"
+    app:startDestination="@id/create"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <fragment
+        android:id="@+id/create"
+        android:name="com.bignerdranch.android.aye_ideacanvas.create.CreateFragment"
+        android:label="fragment_create"
+        tools:layout="@layout/fragment_create">
+
+        <action
+            android:id="@+id/action_create_to_createDetails"
+            app:destination="@id/createDetails" />
+        <action
+            android:id="@+id/action_create_to_home"
+            app:destination="@id/home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createDetails"
+        android:name="com.bignerdranch.android.aye_ideacanvas.create.CreateDetailsFragment"
+        android:label="fragment_create_details"
+        tools:layout="@layout/fragment_create_details">
+        <action
+            android:id="@+id/action_createDetails_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+</navigation>

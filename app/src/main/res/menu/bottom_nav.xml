@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_baseline_search_24"/>
 
     <item android:title="@string/create"
-        android:id="@+id/create"
+        android:id="@+id/create_nav"
         android:icon="@drawable/ic_baseline_add_box_24"/>
 
     <item android:title="@string/notifications"
