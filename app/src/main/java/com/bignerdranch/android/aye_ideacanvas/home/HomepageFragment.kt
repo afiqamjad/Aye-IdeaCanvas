@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import com.bignerdranch.android.aye_ideacanvas.R
 import com.bumptech.glide.Glide
 
@@ -22,9 +22,9 @@ HomepageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val pfpPic = view.findViewById<ImageView>(R.id.pfpPic)
-        val username = view.findViewById<TextView>(R.id.username)
         val storyboard = view.findViewById<ImageView>(R.id.storyboard)
-
+        val likeButton = view.findViewById<Button>(R.id.likeButton)
+        var isPressed = false
         val data = arguments?.getSerializable("my_data") as? Homepage
 
         // Load the images with Glide or Picasso
@@ -37,8 +37,16 @@ HomepageFragment : Fragment() {
                 .load(it.storyboardUrl)
                 .into(storyboard)
 
-            username.text = it.username
         }
+        likeButton.setOnClickListener{
+            if (!isPressed) {
+                likeButton.setBackgroundResource(R.drawable.icon_park_solid_like_pressed)
+            } else {
+                likeButton.setBackgroundResource(R.drawable.icon_park_solid_like_default)
+            }
+            isPressed = !isPressed
+        }
+
     }
 
     companion object {
