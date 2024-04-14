@@ -14,7 +14,7 @@ class IdeaCanvasRepository private constructor (
     private val mainThreadHandler: Handler,
     private val coroutineScope: CoroutineScope = GlobalScope
 ) {
-    private fun insertData(name: String, whichTable: String, whatData: String) {
+    private fun insertData(data: String, whichTable: String) {
         Thread {
             try {
                 Class.forName("org.postgresql.Driver")
@@ -25,8 +25,8 @@ class IdeaCanvasRepository private constructor (
                     "<YOUR_DB_PASSWORD>"
                 )
 
-                val statement = conn.prepareStatement("INSERT INTO $whichTable($whatData) VALUES (?)")
-                statement.setString(1, name)
+                val statement = conn.prepareStatement("INSERT INTO $whichTable($data) VALUES (?)")
+                statement.setString(1, data)
                 statement.executeUpdate()
 
                 conn.close()

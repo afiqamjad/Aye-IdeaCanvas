@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Aye-IdeaCanvasV2</string>
+
+    <string name="search_bar">Search</string>
+
+    <string name="genre_romance">Romance</string>
+    <string name="genre_science_fiction">Science Fiction</string>
+    <string name="genre_historical_fiction">Historical Fiction</string>
+    <string name="genre_horror">Horror</string>
+    <string name="genre_dystopian">Dystopian</string>
+    <string name="genre_crime_fiction">Crime Fiction</string>
+    <string name="genre_fantasy">Fantasy</string>
+    <string name="genre_mystery">Mystery</string>
+</resources>
