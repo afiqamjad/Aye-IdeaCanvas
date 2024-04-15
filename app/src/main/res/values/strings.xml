@@ -34,4 +34,9 @@
     <string name="profile_picture">Profile Picture</string>
     <string name="activity">Activity</string>
     <string name="messages">Messages</string>
+    <string name="standard">Standard</string>
+    <string name="character_sheet">Character Sheet</string>
+    <string name="empty_frame">Empty Frame</string>
+    <string name="other">Other</string>
+    <string name="new_frames_templates">New Frames Templates</string>
 </resources>
