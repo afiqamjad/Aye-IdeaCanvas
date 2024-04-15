@@ -1,0 +1,14 @@
+[
+  {
+    "name": "nav_graph",
+    "navigationXmlIds": [
+      "create_nav_graph"
+    ],
+    "deepLinks": []
+  },
+  {
+    "name": "create_nav_graph",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  }
+]

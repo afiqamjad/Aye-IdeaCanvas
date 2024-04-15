@@ -1,0 +1,238 @@
+[
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_create.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_create.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_icon_park_solid_like_default.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/icon_park_solid_like_default.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_qualifications.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_qualifications.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_music_note_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_music_note_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_search.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_notifications_messages.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_notifications_messages.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_notifications.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/menu_bottom_nav.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/menu/bottom_nav.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/navigation_create_nav_graph.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/navigation/create_nav_graph.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_material_symbols_comment.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/material_symbols_comment.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_create_standard_frame.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_standard_frame.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_search_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_rounded_corner.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/rounded_corner.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_homepage.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_homepage.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_standard_frame.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/standard_frame.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_error_pfp.png.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/error_pfp.png"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_add_box_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_add_box_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_home.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_create_frame_add.xml.flat",
+        "source": "com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_frame_add.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_person_outline_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_person_outline_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/navigation_nav_graph.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_rounded_corner_add.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/rounded_corner_add.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_speech_bubble_background.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/speech_bubble_background.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_frame_item.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/frame_item.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_icon_park_solid_like_pressed.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/icon_park_solid_like_pressed.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_posts.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_posts.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_frame_add.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/frame_add.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_new_frame_templates.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/new_frame_templates.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_notifications_activity.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_notifications_activity.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_create_new_frame_templates.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_new_frame_templates.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_profile.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_activity_main.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_close_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_close_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_notifications_none_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_notifications_none_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/menu_notifications_nav.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/menu/notifications_nav.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_fragment_create_details.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_create_details.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_create_frame_add.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_frame_add.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/xml_backup_rules.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_arrow_back_ios_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_arrow_back_ios_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/layout_create_frame_item.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_frame_item.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_idea_canvas_logo.PNG.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/idea_canvas_logo.PNG"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/menu_profile_nav.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/menu/profile_nav.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_add_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/drawable_ic_baseline_home_24.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/drawable/ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-merged_res-49:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/mipmap-anydpi/ic_launcher_round.xml"
+    }
+]

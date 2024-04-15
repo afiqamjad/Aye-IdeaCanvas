@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_search.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_home.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_qualifications.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_qualifications.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_posts.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_posts.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/activity_main.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/frame_item.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/frame_item.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/standard_frame.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/standard_frame.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_notifications.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/create_standard_frame.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_standard_frame.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_notifications_messages.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_notifications_messages.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_profile.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_notifications_activity.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_notifications_activity.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_create_details.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_create_details.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_create.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_create.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/fragment_homepage.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/fragment_homepage.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/frame_add.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/frame_add.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/create_frame_add.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_frame_add.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/create_frame_item.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_frame_item.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/new_frame_templates.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/new_frame_templates.xml"
+    },
+    {
+        "merged": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/create_new_frame_templates.xml",
+        "source": "/Users/acetyl/.gradle/daemon/8.2/com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_new_frame_templates.xml"
+    },
+    {
+        "merged": "com.bignerdranch.android.aye_ideacanvas.app-mergeDebugResources-48:/layout/create_frame_add.xml",
+        "source": "com.bignerdranch.android.aye_ideacanvas.app-main-51:/layout/create_frame_add.xml"
+    }
+]

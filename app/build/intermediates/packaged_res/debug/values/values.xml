@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="crimson">#990000</color>
+    <color name="dark_gray">#1C1D23</color>
+    <color name="gray">#A7A7A7</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="light_purple">#A4A4D9</color>
+    <color name="purple">#5555BB</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="activity">Activity</string>
+    <string name="add_music">Add music</string>
+    <string name="app_name">Aye-IdeaCanvas</string>
+    <string name="body_text_optional">body text (optional)</string>
+    <string name="character_limit_50">Less than 50 characters</string>
+    <string name="character_sheet">Character Sheet</string>
+    <string name="close">Close</string>
+    <string name="create">Create</string>
+    <string name="create_storyboard">Create StoryBoard</string>
+    <string name="empty_frame">Empty Frame</string>
+    <string name="enter_link">Enter a link to your work</string>
+    <string name="enter_tags">Enter tags</string>
+    <string name="everyone_button">Everyone</string>
+    <string name="frame">Frame</string>
+    <string name="genre_one">Genre 1</string>
+    <string name="genre_two">Genre 2 (optional)</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="link">Link</string>
+    <string name="link_to_work">Link to work</string>
+    <string name="mature_rated">Mature-Rated?</string>
+    <string name="messages">Messages</string>
+    <string name="new_frames_templates">New Frames Templates</string>
+    <string name="next">Next</string>
+    <string name="notifications">Notifications</string>
+    <string name="other">Other</string>
+    <string name="posts">Posts</string>
+    <string name="private_button">Private</string>
+    <string name="profile">Profile</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="qualifications">Qualifications</string>
+    <string name="search">Search</string>
+    <string name="series_title">Series Title</string>
+    <string name="standard">Standard</string>
+    <string name="storyboard_image">Storyboard Image</string>
+    <string name="storyboard_title">StoryBoard Title</string>
+    <string name="tags">Tags</string>
+    <string name="unlisted_button">Unlisted</string>
+    <string name="visibility">Visibility</string>
+    <style name="Base.Theme.AyeIdeaCanvas" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryVariant">@color/dark_gray</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/idea_canvas_logo</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.AyeIdeaCanvas</item>
+    </style>
+    <style name="Theme.AyeIdeaCanvas" parent="Base.Theme.AyeIdeaCanvas"/>
+</resources>
