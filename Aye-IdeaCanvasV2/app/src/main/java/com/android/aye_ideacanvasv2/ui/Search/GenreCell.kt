@@ -1,4 +1,4 @@
-package com.android.aye_ideacanvasv2.ui
+package com.android.aye_ideacanvasv2.ui.Search
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row

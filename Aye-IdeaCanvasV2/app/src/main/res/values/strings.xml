@@ -2,7 +2,6 @@
     <string name="app_name">Aye-IdeaCanvasV2</string>
 
     <string name="search_bar">Search</string>
-
     <string name="genre_romance">Romance</string>
     <string name="genre_science_fiction">Science Fiction</string>
     <string name="genre_historical_fiction">Historical Fiction</string>
@@ -11,4 +10,13 @@
     <string name="genre_crime_fiction">Crime Fiction</string>
     <string name="genre_fantasy">Fantasy</string>
     <string name="genre_mystery">Mystery</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_create">Create</string>
+    <string name="title_activity_notifications">Notifications</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="create">Create</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile">Profile</string>
 </resources>
