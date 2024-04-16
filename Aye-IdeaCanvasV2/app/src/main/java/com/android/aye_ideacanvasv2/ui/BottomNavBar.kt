@@ -32,7 +32,7 @@ import com.android.aye_ideacanvasv2.ui.create.Create
 import com.android.aye_ideacanvasv2.ui.home.Home
 import com.android.aye_ideacanvasv2.ui.notifications.Notifications
 import com.android.aye_ideacanvasv2.ui.profile.Profile
-import com.android.aye_ideacanvasv2.ui.search.SearchScreen
+import com.android.aye_ideacanvasv2.ui.search.Search
 import com.android.aye_ideacanvasv2.ui.ui.theme.NavBarTheme
 
 data class NavColorScheme(
@@ -119,7 +119,7 @@ fun BottomNavigationBar() {
                 modifier = Modifier.padding(paddingValues)
             ) {
                 composable(Screens.Home.route) { Home() }
-                composable(Screens.Search.route) { SearchScreen() }
+                composable(Screens.Search.route) { Search() }
                 composable(Screens.Create.route) { Create() }
                 composable(Screens.Notifications.route) { Notifications() }
                 composable(Screens.Profile.route) { Profile() }
