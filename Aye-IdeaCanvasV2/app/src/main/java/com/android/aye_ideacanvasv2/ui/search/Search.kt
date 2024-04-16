@@ -32,45 +32,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.android.aye_ideacanvasv2.IdeaCanvasDB
+import com.android.aye_ideacanvasv2.model.genres
+import com.android.aye_ideacanvasv2.model.tags
 import kotlinx.coroutines.launch
-
-data class ItemData(val headerText: String?, val items: List<String?>)
-
-val genres = listOf(
-    ItemData(
-        headerText = "Genres",
-        items = listOf(
-            "Romance",
-            "Science Fiction",
-            "Historical Fiction",
-            "Horror",
-            "Dystopian",
-            "Crime Fiction",
-            "Fantasy",
-            "Mystery"
-        )
-    )
-)
-
-val tags = listOf(
-    ItemData(
-        headerText = "Tags",
-        items = listOf(
-            "Drama",
-            "Art",
-            "Education",
-            "Family",
-            "Friendship",
-            "Love",
-            "Medical",
-            "Action",
-            "Holidays",
-            "Sports",
-            "Team",
-            "War"
-        )
-    )
-)
 
 @Preview
 @Composable
