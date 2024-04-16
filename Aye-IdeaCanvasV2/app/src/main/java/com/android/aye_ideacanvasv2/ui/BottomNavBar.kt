@@ -28,11 +28,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.android.aye_ideacanvasv2.model.Screens
-import com.android.aye_ideacanvasv2.ui.Create.Create
-import com.android.aye_ideacanvasv2.ui.Home.Home
-import com.android.aye_ideacanvasv2.ui.Notifications.Notifications
-import com.android.aye_ideacanvasv2.ui.Profile.Profile
-import com.android.aye_ideacanvasv2.ui.Search.SearchScreen
+import com.android.aye_ideacanvasv2.ui.create.Create
+import com.android.aye_ideacanvasv2.ui.home.Home
+import com.android.aye_ideacanvasv2.ui.notifications.Notifications
+import com.android.aye_ideacanvasv2.ui.profile.Profile
+import com.android.aye_ideacanvasv2.ui.search.SearchScreen
 import com.android.aye_ideacanvasv2.ui.ui.theme.NavBarTheme
 
 data class NavColorScheme(

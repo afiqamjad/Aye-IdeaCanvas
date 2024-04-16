@@ -1,4 +1,4 @@
-package com.android.aye_ideacanvasv2.ui.Search
+package com.android.aye_ideacanvasv2.ui.search
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

@@ -1,16 +1,16 @@
-package com.android.aye_ideacanvasv2.ui.Home
+package com.android.aye_ideacanvasv2.ui.create
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun Home() {
-    Text(text = "Home")
+fun Create() {
+    Text(text = "Create")
 }
 
 @Preview
 @Composable
-fun PreviewHome() {
-    Home()
+fun PreviewCreate() {
+    Create()
 }
