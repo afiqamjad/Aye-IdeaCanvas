@@ -1,4 +1,4 @@
-package com.android.aye_ideacanvasv2.ui
+package com.android.aye_ideacanvasv2.ui.Search
 
 import android.content.Context
 import android.os.Handler
@@ -204,8 +204,8 @@ fun insertData(data: String, whichTable: String) {
             Class.forName("org.postgresql.Driver")
 
             val conn: Connection = DriverManager.getConnection(
-                "jdbc:postgresql://<YOUR_DB_HOST>:<PORT>/<DATABASE_NAME>?sslmode=require",
-                "<YOUR_DB_USER>",
+                "jdbc:postgresql://aye-ideacanvas-14031.7tt.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=require",
+                "elliot",
                 "<YOUR_DB_PASSWORD>"
             )
 
@@ -237,12 +237,9 @@ fun fetchData(name: String, whichTable: String) {
             Class.forName("org.postgresql.Driver")
 
             val conn: Connection = DriverManager.getConnection(
-                /*"jdbc:postgresql://<YOUR_DB_HOST>:<PORT>/<DATABASE_NAME>?sslmode=require",
-                "<YOUR_DB_USER>",
-                "<YOUR_DB_PASSWORD>"*/
                 "jdbc:postgresql://aye-ideacanvas-14031.7tt.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=require",
                 "elliot",
-                "mZrhfzcg-T0yM5y6PWcWBQ"
+                "<YOUR_DB_PASSWORD>"
             )
 
             val statement = conn.prepareStatement("SELECT name FROM genre_table ORDER BY random() LIMIT 1")
