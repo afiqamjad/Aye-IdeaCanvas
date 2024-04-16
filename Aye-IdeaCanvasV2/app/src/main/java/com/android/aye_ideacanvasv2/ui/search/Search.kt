@@ -1,6 +1,5 @@
 package com.android.aye_ideacanvasv2.ui.search
 
-import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,19 +12,18 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -33,11 +31,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import java.sql.Connection
-import java.sql.DriverManager
-import java.sql.SQLException
+import com.android.aye_ideacanvasv2.IdeaCanvasDB
+import kotlinx.coroutines.launch
 
-data class ItemData(val headerText: String, val items: List<String>)
+data class ItemData(val headerText: String?, val items: List<String?>)
 
 val genres = listOf(
     ItemData(
@@ -75,18 +72,25 @@ val tags = listOf(
     )
 )
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 fun Search() {
-    var presses by remember { mutableIntStateOf(0) }
+    var isLoading by remember { mutableStateOf(true) }
+    var fetchedData by remember { mutableStateOf<String?>(null) }
+
+    LaunchedEffect(Unit) {
+        launch {
+            fetchedData = IdeaCanvasDB.fetchData("name", "genre_table", "7cf61670-e8f7-400f-9aa4-7f39517d72b0")
+            isLoading = false
+        }
+    }
 
     Scaffold(
         topBar = {
-            SearchBar()
+            SearchBar(fetchedData)
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { fetchData("name", "genre_table") }) {
+            FloatingActionButton(onClick = { }) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             }
         }
@@ -108,17 +112,24 @@ fun Search() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun SearchBar() {
+private fun SearchBar(fetchedData: String?) {
     var searchText by remember { mutableStateOf("") }
 
     CenterAlignedTopAppBar(
         title = {
+            if (fetchedData != null) {
+                Text(fetchedData)
+            } else {
+                Text("Loading...") // Display loading text while data is fetched
+            }
+        }
+        /**title = {
             TextField(
                 value = searchText,
                 onValueChange = { searchText = it },
                 placeholder = { Text("Search") },
             )
-        }
+        }*/
     )
 }
 
@@ -130,7 +141,9 @@ private fun GenreGrid() {
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(genres.flatMap { it.items }.toList()) { item ->
-            GenreItem(text = item)
+            if (item != null) {
+                GenreItem(text = item)
+            }
         }
     }
 }
@@ -154,7 +167,9 @@ private fun TagGrid() {
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(tags.flatMap { it.items }.toList()) { item ->
-            TagItem(text = item)
+            if (item != null) {
+                TagItem(text = item)
+            }
         }
     }
 }
@@ -188,69 +203,4 @@ private fun ExpandableList(headerText: String, content: @Composable () -> Unit) 
             }
         }
     }
-}
-
-fun insertData(data: String, whichTable: String) {
-    Thread {
-        try {
-            Class.forName("org.postgresql.Driver")
-
-            val conn: Connection = DriverManager.getConnection(
-                "jdbc:postgresql://aye-ideacanvas-14031.7tt.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=require",
-                "elliot",
-                "<YOUR_DB_PASSWORD>"
-            )
-
-            val statement = conn.prepareStatement("SELECT $data FROM $whichTable ORDER BY random() LIMIT 1")
-            val resultSet = statement.executeQuery()
-
-            if (resultSet.next()) {
-                val randomItem = resultSet.getString("name")
-
-                Log.d("Database Action", "Random Item: $randomItem")
-            } else {
-                Log.d("Database Action", "No data found")
-            }
-
-            conn.close()
-        }  catch (e: SQLException) {
-            e.printStackTrace()
-            Log.d("Database Action", "Failed to insert data")
-        } catch (e: ClassNotFoundException) {
-            e.printStackTrace()
-            Log.d("Database Action", "Failed to load JDBC driver")
-        }
-    }.start()
-}
-
-fun fetchData(name: String, whichTable: String) {
-    Thread {
-        try {
-            Class.forName("org.postgresql.Driver")
-
-            val conn: Connection = DriverManager.getConnection(
-                "jdbc:postgresql://aye-ideacanvas-14031.7tt.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=require",
-                "elliot",
-                "<YOUR_DB_PASSWORD>"
-            )
-
-            val statement = conn.prepareStatement("SELECT name FROM genre_table ORDER BY random() LIMIT 1")
-            val resultSet = statement.executeQuery()
-
-            if (resultSet.next()) {
-                val randomItem = resultSet.getString("name")
-                Log.d("Database Action", "Random Item: $randomItem")
-            } else {
-                Log.d("Database Action", "No data found")
-            }
-
-            conn.close()
-        } catch (e: SQLException) {
-            e.printStackTrace()
-            Log.d("Database Action", "Failed to fetch data")
-        } catch (e: ClassNotFoundException) {
-            e.printStackTrace()
-            Log.d("Database Action", "Failed to load JDBC driver")
-        }
-    }.start()
 }
