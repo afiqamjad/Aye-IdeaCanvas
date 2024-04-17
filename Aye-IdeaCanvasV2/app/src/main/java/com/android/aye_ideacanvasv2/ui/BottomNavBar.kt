@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -23,12 +24,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.android.aye_ideacanvasv2.model.Screens
 import com.android.aye_ideacanvasv2.ui.create.Create
+import com.android.aye_ideacanvasv2.ui.create.CreateDetails
 import com.android.aye_ideacanvasv2.ui.home.Home
 import com.android.aye_ideacanvasv2.ui.notifications.Notifications
 import com.android.aye_ideacanvasv2.ui.profile.Profile
@@ -40,6 +43,7 @@ data class NavColorScheme(
     val selected: Color,
     val unselected: Color
 )
+
 
 @Composable
 fun BottomNavigationBar() {
@@ -57,62 +61,75 @@ fun BottomNavigationBar() {
         val homeNavBarColors = NavColorScheme(
             MaterialTheme.colorScheme.onBackground,
             MaterialTheme.colorScheme.onPrimary,
-            MaterialTheme.colorScheme.onSecondary)
+            MaterialTheme.colorScheme.onSecondary
+        )
 
         val navBarColors = NavColorScheme(
             MaterialTheme.colorScheme.background,
             MaterialTheme.colorScheme.primary,
-            MaterialTheme.colorScheme.secondary)
+            MaterialTheme.colorScheme.secondary
+        )
 
         val (navTheme, setNavTheme) = remember { mutableStateOf(homeNavBarColors) }
 
         Scaffold(
             bottomBar = {
-                BottomAppBar(
-                    containerColor = navTheme.background
-                ) {
-                    val navBackStackEntry by navController.currentBackStackEntryAsState()
-                    val currentDestination = navBackStackEntry?.destination
-                    items.forEach { screen ->
-                        NavigationBarItem(
-                            selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
-                            alwaysShowLabel = false,
-                            label = { Text(stringResource(screen.label), fontSize = 10.sp) },
-                            colors = NavigationBarItemColors(
-                                selectedIconColor = navTheme.selected,
-                                selectedTextColor = navTheme.selected,
-                                selectedIndicatorColor = navTheme.background,
-                                unselectedIconColor = navTheme.unselected,
-                                unselectedTextColor = navTheme.unselected,
-                                disabledIconColor = navTheme.unselected,
-                                disabledTextColor = navTheme.unselected
-                            ),
-                            icon = {
-                                Icon(
-                                    ImageVector.vectorResource(screen.icon),
-                                    contentDescription = stringResource(screen.label),
-                                    modifier = Modifier.size(28.dp)
-                                )
-                            },
-                            onClick = {
-                                if (screen.route == "home") {
-                                    setNavTheme(homeNavBarColors)
-                                } else {
-                                    setNavTheme(navBarColors)
-                                }
-                                navController.navigate(screen.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) {
-                                        saveState = true
+                val navBackStackEntry by navController.currentBackStackEntryAsState()
+                val currentDestination = navBackStackEntry?.destination
+
+                if (currentDestination?.route !in listOf(Screens.Create.route, Screens.CreateDetails.route)) {
+                    BottomAppBar(
+                        containerColor = navTheme.background
+                    ) {
+                        items.forEach { screen ->
+                            NavigationBarItem(
+                                selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
+                                alwaysShowLabel = false,
+                                label = { Text(stringResource(screen.label), fontSize = 10.sp) },
+                                colors = NavigationBarItemColors(
+                                    selectedIconColor = navTheme.selected,
+                                    selectedTextColor = navTheme.selected,
+                                    selectedIndicatorColor = navTheme.background,
+                                    unselectedIconColor = navTheme.unselected,
+                                    unselectedTextColor = navTheme.unselected,
+                                    disabledIconColor = navTheme.unselected,
+                                    disabledTextColor = navTheme.unselected
+                                ),
+                                icon = {
+                                    Icon(
+                                        ImageVector.vectorResource(screen.icon),
+                                        contentDescription = stringResource(screen.label),
+                                        modifier = Modifier.size(28.dp)
+                                    )
+                                },
+                                onClick = {
+                                    if (screen.route == "home") {
+                                        setNavTheme(homeNavBarColors)
+                                    } else {
+                                        setNavTheme(navBarColors)
                                     }
-                                    launchSingleTop = true
-                                    restoreState = true
+                                    navController.navigate(screen.route) {
+                                        popUpTo(navController.graph.findStartDestination().id) {
+                                            saveState = true
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
+                                    }
                                 }
-                            }
-                        )
+                            )
+                        }
                     }
                 }
             }
         ) { paddingValues ->
+            val navNoSaveState: (Screens) -> Unit = { dest ->
+                val navOptions = NavOptions.Builder()
+                    .setPopUpTo(Screens.Home.route, inclusive = false)
+                    .setLaunchSingleTop(true)
+                    .build()
+                navController.navigate(dest.route, navOptions)
+            }
+
             NavHost(
                 navController = navController,
                 startDestination = Screens.Home.route,
@@ -120,13 +137,15 @@ fun BottomNavigationBar() {
             ) {
                 composable(Screens.Home.route) { Home() }
                 composable(Screens.Search.route) { Search() }
-                composable(Screens.Create.route) { Create() }
+                composable(Screens.Create.route) { Create(onNavigate = navNoSaveState) }
+                composable(Screens.CreateDetails.route) { CreateDetails(onNavigate = navNoSaveState) }
                 composable(Screens.Notifications.route) { Notifications() }
                 composable(Screens.Profile.route) { Profile() }
             }
         }
     }
 }
+
 
 @Preview
 @Composable

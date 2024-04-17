@@ -10,6 +10,8 @@ sealed class Screens(val route: String, val icon: Int, val label: Int) {
 
     data object Create :
         Screens("create", R.drawable.baseline_add_box_24, R.string.create)
+    data object CreateDetails :
+        Screens("createDetails", R.drawable.baseline_add_box_24, R.string.create_details)
 
     data object Notifications :
         Screens("notifications", R.drawable.baseline_notifications_24, R.string.notifications)

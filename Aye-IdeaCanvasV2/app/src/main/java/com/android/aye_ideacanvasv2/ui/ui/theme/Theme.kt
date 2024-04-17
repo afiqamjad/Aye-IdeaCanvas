@@ -16,15 +16,22 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple,
-    secondary = DarkGray,
-    tertiary = Black,
+    primary = DarkGray,
+    onPrimary = White,
+    secondary = LightGray,
+    onSecondary = DarkGray,
+    tertiary = Purple,
+    onTertiary = White,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple,
+    primary = White,
+    onPrimary = Black,
     secondary = LightGray,
-    tertiary = White
+    onSecondary = DarkGray,
+    tertiary = Purple,
+    onTertiary = LightPurple,
+    surface = Gray
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -61,26 +68,12 @@ private val NavLightColorScheme = lightColorScheme(
 @Composable
 fun AyeIdeaCanvasV2Theme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
-    }
-    val view = LocalView.current
-    if (!view.isInEditMode) {
-        SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = Black.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
-        }
     }
 
     MaterialTheme(

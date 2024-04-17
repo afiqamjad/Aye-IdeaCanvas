@@ -2,13 +2,13 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="BottomNavigationBarPreview (2)">
+      <entry key="PreviewCreate">
+        <State />
+      </entry>
+      <entry key="PreviewCreateDetailsScreen">
         <State />
       </entry>
       <entry key="PreviewHome">
-        <State />
-      </entry>
-      <entry key="PreviewProfile">
         <State />
       </entry>
       <entry key="Search">
