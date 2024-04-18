@@ -62,6 +62,8 @@ class GoogleSignIn(private val context: Context, private val coroutineScope: Cor
                         // authenticate on your server.
                         val googleIdTokenCredential = GoogleIdTokenCredential
                             .createFrom(credential.data)
+                        val tokenId = googleIdTokenCredential.idToken
+                        val email = googleIdTokenCredential.id
                     } catch (e: GoogleIdTokenParsingException) {
                         Log.e(TAG, "Received an invalid google id token response", e)
                     }
