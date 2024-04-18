@@ -52,6 +52,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.android.aye_ideacanvasv2.R
 import com.android.aye_ideacanvasv2.model.Screens
+import com.android.aye_ideacanvasv2.model.genres
 import com.android.aye_ideacanvasv2.ui.ui.theme.AyeIdeaCanvasV2Theme
 import com.android.aye_ideacanvasv2.ui.ui.theme.Gray
 import com.android.aye_ideacanvasv2.ui.ui.theme.Purple
@@ -170,7 +171,8 @@ fun MultiToggleButton(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Spinner() {
-    val coffeeDrinks = arrayOf("Americano", "Cappuccino", "Espresso", "Latte", "Mocha")
+    val coffeeDrinks = genres.firstOrNull { it.headerText == "Genres" }?.items?.mapNotNull { it }?.toTypedArray()
+        ?: emptyArray()
     var expanded by remember { mutableStateOf(false) }
     var selectedText by remember { mutableStateOf(coffeeDrinks[0]) }
 
@@ -284,7 +286,7 @@ fun InputField(title : Int, placeholder : Int) {
 
 @Composable
 fun Switch() {
-    var checked by remember { mutableStateOf(true) }
+    var checked by remember { mutableStateOf(false) }
 
     Row(
         modifier = Modifier.fillMaxWidth(),
