@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -29,9 +30,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.android.aye_ideacanvasv2.IdeaCanvasDB
+import com.android.aye_ideacanvasv2.R
 import com.android.aye_ideacanvasv2.model.genres
 import com.android.aye_ideacanvasv2.model.tags
 import kotlinx.coroutines.launch
@@ -62,7 +65,7 @@ fun Search() {
         Column(
             modifier = Modifier
                 .padding(innerPadding),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             ExpandableList(headerText = "Genres") {
                 GenreGrid()
@@ -100,8 +103,9 @@ private fun SearchBar(fetchedData: String?) {
 @Composable
 private fun GenreGrid() {
     LazyVerticalGrid(
+        modifier = Modifier.padding(10.dp, 0.dp, 10.dp, 10.dp),
         columns = GridCells.Fixed(2),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(genres.flatMap { it.items }.toList()) { item ->
@@ -114,11 +118,15 @@ private fun GenreGrid() {
 
 @Composable
 private fun GenreItem(text: String) {
+    var checked by remember { mutableStateOf(false)}
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.padding(vertical = 4.dp)
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .clickable{ checked = !checked }
+
     ) {
-        Checkbox(checked = false, onCheckedChange = {})
+        Checkbox(checked = checked, onCheckedChange = { checked = it })
         Text(text = text)
     }
 }
@@ -127,7 +135,7 @@ private fun GenreItem(text: String) {
 private fun TagGrid() {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(tags.flatMap { it.items }.toList()) { item ->
@@ -140,31 +148,48 @@ private fun TagGrid() {
 
 @Composable
 private fun TagItem(text: String) {
+    var checked by remember { mutableStateOf(false)}
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.padding(vertical = 4.dp)
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .clickable{ checked = !checked }
     ) {
-        Checkbox(checked = false, onCheckedChange = {})
+        Checkbox(checked = checked, onCheckedChange = { checked = it})
         Text(text = text)
     }
 }
 
 @Composable
-private fun ExpandableList(headerText: String, content: @Composable () -> Unit) {
+private fun ExpandableList(
+    headerText: String,
+    content: @Composable () -> Unit,
+) {
     var expanded by remember { mutableStateOf(true) }
     Card(
         modifier = Modifier
+            .padding(10.dp, 0.dp, 10.dp, 0.dp)
             .fillMaxWidth()
             .clickable { expanded = !expanded },
+
         shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
+        Row(
+            modifier = Modifier
+                .padding(16.dp)
         ) {
             Text(text = headerText, style = MaterialTheme.typography.headlineSmall)
-            if (expanded) {
-                content()
-            }
+            Spacer(modifier = Modifier.weight(1f)) // Push content to the left
+            Icon(
+                painter = painterResource(
+                    id = if (expanded) R.drawable.baseline_keyboard_arrow_down_24
+                    else R.drawable.baseline_keyboard_arrow_right_24
+                ),
+                contentDescription = "Expand/Collapse"
+            )
         }
+    }
+    if (expanded) {
+        content()
     }
 }
