@@ -13,7 +13,7 @@ object IdeaCanvasDB {
 
     private const val dbUrl: String = "jdbc:postgresql://aye-ideacanvas-14031.7tt.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=require"
     private const val dbUsername: String = "elliot"
-    private const val dbPassword: String = "hPX6uyZJIyfoqHQJpGwLMg"
+    private const val dbPassword: String = "<YOUR_DB_PASSWORD>"
 
     suspend fun insertData(data: String, whichTable: String) {
         withContext(Dispatchers.IO) {
