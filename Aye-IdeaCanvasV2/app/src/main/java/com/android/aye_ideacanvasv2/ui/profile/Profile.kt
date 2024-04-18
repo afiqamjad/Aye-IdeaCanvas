@@ -16,6 +16,11 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment.Companion.BottomStart
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -25,12 +30,27 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.android.aye_ideacanvasv2.IdeaCanvasDB
 import com.android.aye_ideacanvasv2.R
+import com.android.aye_ideacanvasv2.model.User
 import com.android.aye_ideacanvasv2.ui.ui.theme.White
+import kotlinx.coroutines.launch
+
+val userId = 1;
 
 
 @Composable
 fun Profile() {
+    var isLoading by remember { mutableStateOf(true) }
+    var fetchedData by remember { mutableStateOf<User?>(null) }
+
+    LaunchedEffect(Unit) {
+        launch {
+            fetchedData = IdeaCanvasDB.fetchUser(userId)
+            isLoading = false
+        }
+    }
+
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -39,7 +59,7 @@ fun Profile() {
             BannerProfile()
         }
         item {
-            UserName()
+            fetchedData?.let { UserName(it.username) }
         }
         item {
             UserDescription()
@@ -93,9 +113,9 @@ fun BannerProfile(){
     }
 }
 @Composable
-fun UserName() {
+fun UserName(username: String) {
     Text(
-        text = "Tom Hanks",
+        text = username,
         fontSize = 20.sp,
         fontWeight = FontWeight.Bold,
         modifier = Modifier

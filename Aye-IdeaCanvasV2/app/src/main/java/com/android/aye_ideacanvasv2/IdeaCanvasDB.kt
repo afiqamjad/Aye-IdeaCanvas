@@ -2,6 +2,7 @@ package com.android.aye_ideacanvasv2
 
 import android.util.Log
 import com.android.aye_ideacanvasv2.model.Post
+import com.android.aye_ideacanvasv2.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.sql.Connection
@@ -12,7 +13,7 @@ object IdeaCanvasDB {
 
     private const val dbUrl: String = "jdbc:postgresql://aye-ideacanvas-14031.7tt.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=require"
     private const val dbUsername: String = "elliot"
-    private const val dbPassword: String = "<YOUR_DB_PASSWORD>"
+    private const val dbPassword: String = "hPX6uyZJIyfoqHQJpGwLMg"
 
     suspend fun insertData(data: String, whichTable: String) {
         withContext(Dispatchers.IO) {
@@ -153,5 +154,44 @@ object IdeaCanvasDB {
         return post
     }
 
+    suspend fun fetchUser(userId: Int): User? {
+        var user: User? = null
+
+        withContext(Dispatchers.IO) {
+            try {
+                Class.forName("org.postgresql.Driver")
+
+                val conn = DriverManager.getConnection(
+                    dbUrl,
+                    dbUsername,
+                    dbPassword
+                )
+
+                val statement = conn.prepareStatement("SELECT * FROM user_table WHERE user_id = ?")
+                statement.setInt(1, userId)
+                val resultSet = statement.executeQuery()
+
+                if (resultSet.next()) {
+                    val username = resultSet.getString("username")
+                    val imageUrl = resultSet.getString("image_url")
+
+                    user = User(username, imageUrl)
+                    Log.d("Database Action", "User fetched successfully")
+                } else {
+                    Log.d("Database Action", "No user found with userId: $userId")
+                }
+
+                conn.close()
+            } catch (e: SQLException) {
+                e.printStackTrace()
+                Log.d("Database Action", "Failed to fetch user")
+            } catch (e: ClassNotFoundException) {
+                e.printStackTrace()
+                Log.d("Database Action", "Failed to load JDBC driver")
+            }
+        }
+
+        return user
+    }
 
 }
