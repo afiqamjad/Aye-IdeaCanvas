@@ -7,29 +7,12 @@ import kotlinx.coroutines.withContext
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.SQLException
-import java.io.FileInputStream
-import java.util.Properties
 
 object IdeaCanvasDB {
 
-    private val props = Properties()
-
-    init {
-        loadConfig()
-    }
-
-    private fun loadConfig() {
-        try {
-            val configFile = "path/to/config.properties"
-            props.load(FileInputStream(configFile))
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    private val dbUrl: String = props.getProperty("db.url")
-    private val dbUsername: String = props.getProperty("db.username")
-    private val dbPassword: String = props.getProperty("db.password")
+    private const val dbUrl: String = "jdbc:postgresql://aye-ideacanvas-14031.7tt.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=require"
+    private const val dbUsername: String = "elliot"
+    private const val dbPassword: String = "<YOUR_DB_PASSWORD>"
 
     suspend fun insertData(data: String, whichTable: String) {
         withContext(Dispatchers.IO) {
