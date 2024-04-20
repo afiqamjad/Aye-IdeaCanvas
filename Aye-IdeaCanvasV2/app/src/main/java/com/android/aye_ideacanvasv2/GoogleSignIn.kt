@@ -4,44 +4,78 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
 import androidx.credentials.GetCredentialResponse
 import androidx.credentials.exceptions.GetCredentialException
-import com.google.android.libraries.identity.googleid.GetGoogleIdOption
+import com.google.android.libraries.identity.googleid.GetSignInWithGoogleOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 class GoogleSignIn(private val context: Context, private val coroutineScope: CoroutineScope) {
+    private lateinit var result: GetCredentialResponse
 
     @Composable
     fun GoogleLoginButton() {
-        Button(onClick = { signInWithGoogle() }) {
-            Text("Sign in with Google")
+        Button(onClick = { signInWithGoogle() },
+            modifier = Modifier
+                .width(300.dp)
+                .height(45.dp),
+            shape = RoundedCornerShape(12.dp),
+            colors = ButtonDefaults.buttonColors(White),
+            elevation = ButtonDefaults.elevatedButtonElevation(10.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    painter = painterResource(id = R.mipmap.ic_google_foreground),
+                    contentDescription = "Google icon",
+                    tint = Color.Unspecified,
+                )
+                Text(
+                    text = "Login with Google",
+                    color = Black,
+                    fontWeight = FontWeight.W600,
+                    fontSize = 16.sp,
+                    modifier = Modifier.padding(start = 10.dp)
+                )
+            }
         }
     }
 
     private fun signInWithGoogle() {
-        val googleIdOption: GetGoogleIdOption = GetGoogleIdOption.Builder()
-            .setFilterByAuthorizedAccounts(false) // Query all google accounts on the device
-            .setServerClientId("12700062877-q7ad23jshkuqucse7devdmuf9jiuh8s6.apps.googleusercontent.com")
+        val googleIdOption: GetSignInWithGoogleOption = GetSignInWithGoogleOption.Builder(serverClientId = "12700062877-q7ad23jshkuqucse7devdmuf9jiuh8s6.apps.googleusercontent.com")
             .build()
-
         val request = GetCredentialRequest.Builder()
             .addCredentialOption(googleIdOption)
             .build()
-
         val credentialManager = CredentialManager.create(context)
-
         coroutineScope.launch {
             try {
-                val result = credentialManager.getCredential(context, request)
+                result = credentialManager.getCredential(context, request)
                 handleSignIn(result)
                 val intent = Intent(context, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
