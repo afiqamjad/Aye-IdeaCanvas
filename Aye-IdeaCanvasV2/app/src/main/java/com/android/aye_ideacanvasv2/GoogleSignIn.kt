@@ -1,6 +1,5 @@
 package com.android.aye_ideacanvasv2
 
-import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
@@ -29,13 +28,14 @@ import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
 import androidx.credentials.GetCredentialResponse
 import androidx.credentials.exceptions.GetCredentialException
-import com.google.android.libraries.identity.googleid.GetSignInWithGoogleOption
+import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 class GoogleSignIn(private val context: Context, private val coroutineScope: CoroutineScope, private val auth: FirebaseAuth) {
     private lateinit var result: GetCredentialResponse
@@ -70,7 +70,9 @@ class GoogleSignIn(private val context: Context, private val coroutineScope: Cor
     }
 
     private fun signInWithGoogle() {
-        val googleIdOption: GetSignInWithGoogleOption = GetSignInWithGoogleOption.Builder(serverClientId = "12700062877-q7ad23jshkuqucse7devdmuf9jiuh8s6.apps.googleusercontent.com")
+        val googleIdOption: GetGoogleIdOption = GetGoogleIdOption.Builder()
+            .setServerClientId("12700062877-q7ad23jshkuqucse7devdmuf9jiuh8s6.apps.googleusercontent.com")
+            .setFilterByAuthorizedAccounts(false)
             .build()
         val request = GetCredentialRequest.Builder()
             .addCredentialOption(googleIdOption)
@@ -89,7 +91,7 @@ class GoogleSignIn(private val context: Context, private val coroutineScope: Cor
         }
     }
 
-    private fun handleSignIn(result: GetCredentialResponse) {
+    private suspend fun handleSignIn(result: GetCredentialResponse) {
         // Handle the successfully returned credential.
         when (val credential = result.credential) {
             is CustomCredential -> {
@@ -101,14 +103,9 @@ class GoogleSignIn(private val context: Context, private val coroutineScope: Cor
                             .createFrom(credential.data)
                         val tokenId = googleIdTokenCredential.idToken
                         val firebaseCredential = GoogleAuthProvider.getCredential(tokenId, null)
-                        auth.signInWithCredential(firebaseCredential)
-                            .addOnCompleteListener(context as Activity) { task ->
-                                if (task.isSuccessful) {
-                                    val user = auth.currentUser
-                                }
-
-                            }
-                        val email = googleIdTokenCredential.id
+                        auth.signInWithCredential(firebaseCredential).await()
+                        val user = auth.currentUser
+                        val email = user?.email
                     } catch (e: GoogleIdTokenParsingException) {
                         Log.e(TAG, "Received an invalid google id token response", e)
                     }
