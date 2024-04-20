@@ -1,5 +1,6 @@
 package com.android.aye_ideacanvasv2
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
@@ -31,10 +32,12 @@ import androidx.credentials.exceptions.GetCredentialException
 import com.google.android.libraries.identity.googleid.GetSignInWithGoogleOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-class GoogleSignIn(private val context: Context, private val coroutineScope: CoroutineScope) {
+class GoogleSignIn(private val context: Context, private val coroutineScope: CoroutineScope, private val auth: FirebaseAuth) {
     private lateinit var result: GetCredentialResponse
 
     @Composable
@@ -97,6 +100,14 @@ class GoogleSignIn(private val context: Context, private val coroutineScope: Cor
                         val googleIdTokenCredential = GoogleIdTokenCredential
                             .createFrom(credential.data)
                         val tokenId = googleIdTokenCredential.idToken
+                        val firebaseCredential = GoogleAuthProvider.getCredential(tokenId, null)
+                        auth.signInWithCredential(firebaseCredential)
+                            .addOnCompleteListener(context as Activity) { task ->
+                                if (task.isSuccessful) {
+                                    val user = auth.currentUser
+                                }
+
+                            }
                         val email = googleIdTokenCredential.id
                     } catch (e: GoogleIdTokenParsingException) {
                         Log.e(TAG, "Received an invalid google id token response", e)
